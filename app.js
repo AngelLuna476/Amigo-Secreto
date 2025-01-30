@@ -2,12 +2,6 @@
 //Array para los nombres
 let friends = []; 
 
-//Para validar el nombre:
-function validarNombre(nombre) {
-    const regex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
-    return regex.test(nombre);
-}
-
 function agregarAmigo() {
     let nombreAmigo = document.getElementById("amigo").value;
     if (nombreAmigo.trim() === "") {
@@ -46,6 +40,4 @@ function sortearAmigo() {
     //codigo para que no aparezca la lista de amigos ingresados al momento del sorteo:
     const lista = document.getElementById("listaAmigos");
     lista.innerHTML = ""
-    // Reiniciar el array de amigos después del sorteo:
-    friends = [];
 }
