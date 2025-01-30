@@ -2,13 +2,22 @@
 //Array para los nombres
 let friends = []; 
 
+//Función para que solo acepten letras y no numeros
+function validarNombre(nombre) {
+    const regex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
+    return regex.test(nombre);
+}
+
 function agregarAmigo() {
     let nombreAmigo = document.getElementById("amigo").value;
     if (nombreAmigo.trim() === "") {
         alert("Por favor, inserte un nombre."); 
         return false;
+    } else if (!validarNombre(nombreAmigo)) { //validación de solo el nombre para que sea agregado al array
+        alert("Por favor, inserte un nombre válido (solo letras y espacios).");
+        return false;
     } else {
-        friends.push(nombreAmigo);//agregado a la lista array
+        friends.push(nombreAmigo); // Agregado a la lista array
         document.getElementById("amigo").value = "";
         mostrarAmigos();
         return true;
@@ -40,4 +49,7 @@ function sortearAmigo() {
     //codigo para que no aparezca la lista de amigos ingresados al momento del sorteo:
     const lista = document.getElementById("listaAmigos");
     lista.innerHTML = ""
+
+    // Reiniciar el array de amigos después del sorteo:
+    friends = [];
 }
