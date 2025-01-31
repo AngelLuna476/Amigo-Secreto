@@ -1,4 +1,3 @@
-
 //Array para los nombres
 let friends = []; 
 
@@ -13,13 +12,14 @@ function agregarAmigo() {
     if (nombreAmigo.trim() === "") {
         alert("Por favor, inserte un nombre."); 
         return false;
-    } else if (!validarNombre(nombreAmigo)) { //validación de solo el nombre para que sea agregado al array
+    } else if (!validarNombre(nombreAmigo)) {
         alert("Por favor, inserte un nombre válido (solo letras y espacios).");
         return false;
     } else {
         friends.push(nombreAmigo); // Agregado a la lista array
         document.getElementById("amigo").value = "";
         mostrarAmigos();
+        document.getElementById("resultado").innerHTML = ""; //limpiar al momento de agregar el amigo
         return true;
     }
 }
@@ -39,8 +39,13 @@ function sortearAmigo() {
         alert("No hay suficientes amigos disponibles para sortear. Se necesitan al menos 3 amigos.");
         return; //se escogen como 3 minimo por la probabilidad
     }
+
+    // Reiniciar el contenido de resultado antes del sorteo
+    document.getElementById("resultado").innerHTML = "";
+
     //Operación de sorteo:
     var indiceAleatorio = Math.floor(Math.random() * friends.length); 
+    
     //Variable para que aparezca el nombre amigo sorteado en la pantalla:
     var amigoSorteado = friends[indiceAleatorio];
     document.getElementById("resultado").innerHTML = "El amigo secreto sorteado es: " + amigoSorteado;
@@ -49,5 +54,8 @@ function sortearAmigo() {
     //codigo para que no aparezca la lista de amigos ingresados al momento del sorteo:
     const lista = document.getElementById("listaAmigos");
     lista.innerHTML = ""
+
+    // Reiniciar el array de amigos después del sorteo:
+    friends = [];
 
 }
