@@ -53,6 +53,9 @@ function sortearAmigo() {
 
     //codigo para que no aparezca la lista de amigos ingresados al momento del sorteo:
     const lista = document.getElementById("listaAmigos");
-    lista.innerHTML = ""
+    lista.innerHTML = "";
+    // Reiniciar el array de amigos después del sorteo:
+    friends = [];
+    lista.innerHTML = "";
 
 }
