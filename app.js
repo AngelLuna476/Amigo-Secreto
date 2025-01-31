@@ -55,7 +55,4 @@ function sortearAmigo() {
     const lista = document.getElementById("listaAmigos");
     lista.innerHTML = ""
 
-    // Reiniciar el array de amigos después del sorteo:
-    friends = [];
-
 }
