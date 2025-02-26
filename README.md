@@ -2,7 +2,7 @@
 
 *Proyecto del programa de formación ORACLE NEX EDUCATION en conjunto con ALURA LATAM*
 
-Este es un pequeño proyecto en JavaScript, en el cual, se permite gestionar una lista de amigos en donde los usuarios pueden agregar nuevos amigos, ver su lista actualizada y seleccionar aleatoriamente a uno de ellos.
+Proyecto en JavaScript a escala reducida, en el cual, se permite gestionar una lista de amigos en donde los usuarios pueden agregar nuevos amigos, ver su lista actualizada y seleccionar aleatoriamente a uno de ellos.
 
 ---
 
